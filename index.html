@@ -8,8 +8,18 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Gompei's Clicker Chaos</h1>
-    <h2>Score: <span id="score">5</span></h2>
+
+    <audio id="chips">        
+        <source src="./Chips Sound Effect.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="https://cdn.rawgit.com/labnol/files/master/yt.js"></script>
+<!--Video Link: https://www.youtube.com/watch?v=iR9Sk31IOCk-->
+
+    <h1>Gompei's Chip Company</h1>
+    <h2>Score: <span id="score">5</span> / 1500</h2> 
     <div id="store-container">
         <!-- Add store for each widget type -->
         <!--   name: Name of item -->
@@ -21,15 +31,19 @@
         <!--   textstyle: Style to apply to text -->
         <!--   src: Path to image (optional) -->
         <!--   imgstyle: Style to apply to image (optional) -->
-        <div class="store"  name="Lawn" cost="5" reap="2" cooldown="0.5"
-        text="Lawn" textstyle="font-size: 30px"></div>
-        <div class="store" name="Gompei" cost="15" reap="10" cooldown="2.0" auto="true"
-        src="./gompei.png"></div>
-        <div class="store" name="SuperGompei" cost="150" reap="50" cooldown="10.0" auto="true" 
-        src="./gompei.png" imgstyle="filter: hue-rotate(180deg); transform: rotateX(180deg);"></div>
+        <div class="store"  name="chip??" cost="5" reap="2" cooldown="0.5"
+        text="chip??" textstyle="font-size: 30px"></div>
+        <div class="store" name="Takis" cost="15" reap="10" cooldown="2.0" auto="true"
+        src="./Takis.png"></div>
+        <div class="store" name="Doritos" cost="75" reap="25" cooldown="5.0" auto="true"
+        src="./Doritos.png"></div>
+        <div class="store" name="Super Takis" cost="150" reap="50" cooldown="10.0" auto="true" 
+        src="./Takis.png" imgstyle="filter: hue-rotate(180deg); transform: rotateX(180deg);"></div>
     </div>
     <div id="widget-container"></div>
-    
+
+    <h1 id="Goal" ></h1>
+    <button id="goal-button" onclick="location.reload()">Restart Game?</button>
     <script src="./game.js"></script>
     <script src="./load.js"></script>
 </body>

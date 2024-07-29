@@ -8,18 +8,24 @@ function buy(store) {
     if(bank < cost) return;
 
     changeScore(-1 * cost);
-
+    
     var widget = document.createElement("div");
     widget.classList.add("widget");
     fillWidget(store, widget);
+    
     widget.onclick = () => {
         harvest(widget);
+        let chips = document.getElementById("chips");
+        
     }
+
     widgetContainer.appendChild(widget);
     if (widget.getAttribute("auto") == 'true') harvest(widget);
+    
 }
-
+let bank
 function harvest(widget) {
+    chips.play();
     // Only run if currently not harvesting
     if (widget.hasAttribute("harvesting")) return;
     // Set harvesting flag
@@ -42,12 +48,13 @@ function harvest(widget) {
             harvest(widget)
         }
     }, parseFloat(widget.getAttribute("cooldown")) * 1000);
+    
 }
 
 function changeScore(amount) {
     score.innerHTML = parseInt(score.innerHTML) + parseInt(amount);
 
-    let bank = parseInt(score.innerHTML);
+    bank = parseInt(score.innerHTML);
     // Update the stores to block buying expensive boxes
     for (let store of stores) {
         console.log(store);
@@ -57,7 +64,9 @@ function changeScore(amount) {
         } else {
             store.removeAttribute("broke");
         }
+        
     }
+    goal()
 }
 
 function showPoint(widget) {
@@ -70,4 +79,15 @@ function showPoint(widget) {
         widget.removeChild(number);
     }
     widget.appendChild(number);
+}
+
+function goal() {
+    var goal = document.getElementById("Goal")
+    const goalButton = document.getElementById("goal-button")
+    if (parseInt(bank) >= 1500)
+    {
+        goal.innerHTML = "Goal Reached"
+        goalButton.style.display = 'block'
+    }
+    else if (parseInt(bank) < 1500) goal.innerHTML = ""
 }
