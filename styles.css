@@ -69,7 +69,7 @@ h1, h2 {
 
 /* If the widget is a click widget */
 .widget:not([auto="true"]) {
-    background-color: limegreen;
+    background-color: lime;
     border: 3px solid white;
 }
 
