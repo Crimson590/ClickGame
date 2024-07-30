@@ -1,13 +1,18 @@
 const widgetContainer = document.getElementById("widget-container");
+
+var x = 0
 function buy(store) {
+    let score = document.getElementById('score')
     let bank = parseInt(score.innerHTML);
     let cost = store.getAttribute("cost");
+
     console.log(`bank:[${bank}] cost: [${cost}]`);
 
     // Exit early if store is too expensive
     if(bank < cost) return;
 
     changeScore(-1 * cost);
+    x += 10;
     
     var widget = document.createElement("div");
     widget.classList.add("widget");
@@ -16,12 +21,10 @@ function buy(store) {
     widget.onclick = () => {
         harvest(widget);
         let chips = document.getElementById("chips");
-        
     }
 
     widgetContainer.appendChild(widget);
     if (widget.getAttribute("auto") == 'true') harvest(widget);
-    
 }
 let bank
 function harvest(widget) {
@@ -31,7 +34,6 @@ function harvest(widget) {
     // Set harvesting flag
     widget.setAttribute("harvesting", "");
     
-
     // If manual, collect points now
     if (widget.getAttribute("auto") != 'true') {
         changeScore(widget.getAttribute("reap"))
@@ -48,7 +50,6 @@ function harvest(widget) {
             harvest(widget)
         }
     }, parseFloat(widget.getAttribute("cooldown")) * 1000);
-    
 }
 
 function changeScore(amount) {
@@ -64,7 +65,6 @@ function changeScore(amount) {
         } else {
             store.removeAttribute("broke");
         }
-        
     }
     goal()
 }

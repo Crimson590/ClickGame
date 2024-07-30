@@ -2,13 +2,31 @@
     --widget-width: 150px;
 }
 
+div#left-side {
+    float: right;
+    background-color: white;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border: 5px;
+}
+
 * {
     position: relative;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 body {
+    float: right;
+    width: 100%;
     background-color: rgb(225, 15, 45)
+}
+div#right-side {
+    position: relative;
+    background-color: white;
+    width: 100%;
+    height: 100;
+    float: right;
 }
 
 h1, h2 {
@@ -84,7 +102,7 @@ h1, h2 {
 
 /* If the widget is a click widget */
 .widget:not([auto="true"]) {
-    background-color: black;
+    background-color: darkred;
     border: 3px solid white;
 }
 
