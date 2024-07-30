@@ -44,8 +44,8 @@ h1, h2 {
 
 #store-container {
     border: 5px solid white;
-    width: 50%;
-    left: 25%;
+    width: 46.3%;
+    left: 26.5%;
     align-items: center;
     offset: 50;
     
@@ -68,9 +68,9 @@ h1, h2 {
 #widget-container {
     border: 5px solid white;
     display: flex;
-    left: 25%;
+    left: 27%;
     flex-wrap: wrap;
-    width: 50%;
+    width: 45.35%;
 }
 
 .widget {

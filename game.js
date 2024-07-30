@@ -21,6 +21,7 @@ function buy(store) {
     widget.onclick = () => {
         harvest(widget);
         let chips = document.getElementById("chips");
+        
     }
 
     widgetContainer.appendChild(widget);
@@ -28,9 +29,19 @@ function buy(store) {
 }
 let bank
 function harvest(widget) {
+    
     chips.play();
+    
+    widget.getAttribute('name')
+    if (widget.getAttribute('name') == 'Potato Chips')
+    {
+        let potatoMP3 = document.getElementById("potatochipMP3")
+        potatoMP3.play()
+    }
+    
     // Only run if currently not harvesting
     if (widget.hasAttribute("harvesting")) return;
+    
     // Set harvesting flag
     widget.setAttribute("harvesting", "");
     
